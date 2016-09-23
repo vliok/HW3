@@ -1,6 +1,7 @@
 #insert header
 
 from flask import Flask, render_template
+app = Flask(__name__)
 
 import random
 
@@ -27,10 +28,14 @@ def randomize(d):
             return job
 
 occupations = convertToDict()
-        
+
+@app.route("/")
+def mainPage():
+    return "HELLO"
+
 @app.route("/occupations")
 def printTable():
-    return render_template("table.html",title="Randomize",header="Occupations",list=occupations)
+    return render_template("table.html",title="Randomize",header="Occupations",dict=occupations)
 
 if __name__ == "__main__" :
     app.debug = True
