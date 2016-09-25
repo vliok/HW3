@@ -3,15 +3,11 @@
 
 <head>
   <title> {{ title }} </title>
-  <h1 align="center"> {{ header }} </h1>
+  <h1> {{ header }} </h1>
 </head>
 
 <body>
-  <table align="center" border="1">
-    <tr>
-      <th> Occupation </th>
-      <th> Percentage </th>
-    </tr>
+  <table>
     {%- for key, value in dict.iteritems() %}
     <tr>
       <td> {{key}} </td>
@@ -19,8 +15,6 @@
     </tr>
     {%- endfor %}
   </table>
-  <br>
-  <h1 align="center"> {{ outcome }} </h1>
 </body>
 
 </html>
